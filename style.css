@@ -1,0 +1,103 @@
+/* ios Dark Glassmorphism Theme */
+body {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* Rich dark gradient to enhance glass effect */
+    color: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    min-height: 100svh;
+    margin: 0;
+    padding: max(16px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) max(16px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+    box-sizing: border-box;
+}    
+.calculator {
+    background: rgba(255, 255, 255, 0.08); /* Frontsted glass body container */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 30px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    width: min(100%, 368px);
+    padding: 24px;
+    box-sizing: border-box;
+}
+/*Display Screen*/
+.display {
+    background: rgba(0, 0, 0, 0.25);
+    color:#ffffff;
+    font-size: 2.5rem;
+    font-weight:300;
+    text-align:right;
+    padding:20px 15px;
+    border-radius:16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    margin-bottom:20px;
+    overflow-x:auto;
+}
+/*Buttons Grid Layout*/
+.buttons {
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:12px;
+}
+/*Base Glass Buttons (IOS Round Shape)*/
+.btn {
+    background: rgba(255,255,255,0.12); /*Translucent fill */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    color:#ffffff;
+    border:1px solid rgba(255,255,255,0.18);
+    height:60px;
+    font-size:1.4rem;
+    font-weight:400;
+    border-radius:50%; /*ios round buttons */
+    cursor:pointer;
+    transition:all 0.2s ease;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.btn:active {
+    transform:scale(0.95);
+    background:rgba(255,255,255,0.35);
+}
+
+@media (hover: hover) {
+    .btn:hover {
+        background:rgba(255,255,255,0.22);
+        border-color:rgba(255,255,255,0.3);
+    }
+
+    .btn.clear:hover {
+        background:rgba(255,255,255,0.35);
+    }
+}
+
+/*Top Row Utility Buttons (AC,Delete)*/
+.btn.clear, .btn.operator:nth-child(4) {
+    background: rgba(255,255,255,0.25);
+    color:#000000;
+    font-weight:500;
+}
+
+/*iOS Orange Operator Buttons (+,-,*,/,=)*/
+.btn.operator, .btn.equals{
+    background:rgba(255,159,10,0.75); /*ios Orange glass*/
+    color:#ffffff;
+    border:1px solid rgba(255,180,70,0.4);
+}
+.btn.equals {
+    grid-row: span 2;
+    border-radius:30px; /*Pill shape for tall equals key*/
+    height:100%;
+}
+
+/*iOS Zero Button*/
+.btn.zero {
+    grid-column: span 2;
+    border-radius:30px; /*Pill shape for wide zero key*/
+    justify-content: flex-start;
+    padding-left:24px;
+}

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DE Calculator</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+    <div class="calculator">
+        <!--Calculator Screen-->
+        <div class="display" id="display">0</div>
+
+        <!-- Buttons Grid -->
+         <div class="buttons">
+            <button class="btn clear" onclick="clearDisplay()">AC</button>
+            <button class="btn operator" onclick="appendcharacter('/')">&divide;</button>
+            <button class="btn operator" onclick="appendcharacter('*')">&times;</button>
+            <button class="btn operator" onclick="deletelast()">Del</button>
+
+            <button class="btn" onclick="appendcharacter('7')">7</button>
+            <button class="btn" onclick="appendcharacter('8')">8</button>
+            <button class="btn" onclick="appendcharacter('9')">9</button>
+            <button class="btn operator" onclick="appendcharacter('-')">-</button>
+
+            <button class="btn" onclick="appendcharacter('4')">4</button>
+            <button class="btn" onclick="appendcharacter('5')">5</button>
+            <button class="btn" onclick="appendcharacter('6')">6</button>
+            <button class="btn operator" onclick="appendcharacter('+')">+</button>
+
+            <button class="btn" onclick="appendcharacter('1')">1</button>
+            <button class="btn" onclick="appendcharacter('2')">2</button>
+            <button class="btn" onclick="appendcharacter('3')">3</button>
+            <button class="btn equals" onclick="calculatorResult()">=</button>
+
+            <button class="btn zero" onclick="appendcharacter('0')">0</button>
+            <button class="btn" onclick="appendcharacter('.')">.</button>
+         </div>
+    </div>
+
+    <script src="script.code.js"></script>
+    </body>
+</html>
